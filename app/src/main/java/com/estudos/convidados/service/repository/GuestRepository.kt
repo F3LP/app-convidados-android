@@ -2,7 +2,7 @@ package com.estudos.convidados.service.repository
 
 import android.content.ContentValues
 import android.content.Context
-import com.estudos.convidados.service.DataBaseConstants
+import com.estudos.convidados.service.constants.DataBaseConstants
 import com.estudos.convidados.service.model.Guest
 
 class GuestRepository private constructor(context: Context) {
@@ -83,7 +83,7 @@ class GuestRepository private constructor(context: Context) {
         return try {
             val db = mGuestDataBaseHelper.readableDatabase
 
-            val cursor = db.rawQuery("SELECT id, name, presence FROM Guet WHERE presence = 1", null)
+            val cursor = db.rawQuery("SELECT id, name, presence FROM Guest WHERE presence = 1", null)
 
             if (cursor != null && cursor.count > 0) {
                 while (cursor.moveToNext()) {
@@ -113,7 +113,7 @@ class GuestRepository private constructor(context: Context) {
             val db = mGuestDataBaseHelper.readableDatabase
 
             val cursor =
-                db.rawQuery("SELECT id, name, presence FROM Guet WHERE presence = 0", null)
+                db.rawQuery("SELECT id, name, presence FROM Guest WHERE presence = 0", null)
 
             if (cursor != null && cursor.count > 0) {
                 while (cursor.moveToNext()) {

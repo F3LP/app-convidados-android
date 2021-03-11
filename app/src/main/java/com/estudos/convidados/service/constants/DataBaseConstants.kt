@@ -1,4 +1,4 @@
-package com.estudos.convidados.service
+package com.estudos.convidados.service.constants
 
 class DataBaseConstants private constructor() {
 
