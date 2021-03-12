@@ -1,3 +1,19 @@
 package com.estudos.convidados.service.model
 
-data class Guest(var name: String, var presence: Boolean, val id: Int = 0)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "Guest")
+class Guest() {
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    var id: Int = 0
+
+    @ColumnInfo(name = "name")
+    var name: String = ""
+
+    @ColumnInfo(name = "presence")
+    var presence: Boolean = true
+}
